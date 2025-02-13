@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6D567876-0023-4DE4-BF28-02443891CD42"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6EAAA152-A400-4AFA-B1FB-A0AE564E95AA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IntuneRemediationFlow/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "accountId(_:hasComplianceStatus:withErrorMessage:andErrorTitle:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6EAAA152-A400-4AFA-B1FB-A0AE564E95AA - 68ebee78f17e52be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IntuneRemediationFlow.ViewController.unenrollRequest(with: __C.IntuneMAMEnrollmentStatus) -&gt; ()"
+                  moduleName = "IntuneRemediationFlow.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vinaykumar/practice/Xcode/GithubIssues/IntuneRemediationFlow/IntuneRemediationFlow/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180">
+               </Location>
+               <Location
+                  uuid = "6EAAA152-A400-4AFA-B1FB-A0AE564E95AA - f8e0f26141d0b0d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IntuneRemediationFlow.ViewController.accountId(_: Swift.String, hasComplianceStatus: __C.IntuneMAMComplianceStatus, withErrorMessage: Swift.String, andErrorTitle: Swift.String) -&gt; ()"
+                  moduleName = "IntuneRemediationFlow.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vinaykumar/practice/Xcode/GithubIssues/IntuneRemediationFlow/IntuneRemediationFlow/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9ED4CF6F-D106-4103-9067-3068CE7FB7B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IntuneRemediationFlow/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "signOut()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9ED4CF6F-D106-4103-9067-3068CE7FB7B6 - bbca995f5e1e8205"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IntuneRemediationFlow.ViewController.signOut() -&gt; ()"
+                  moduleName = "IntuneRemediationFlow.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vinaykumar/practice/Xcode/GithubIssues/IntuneRemediationFlow/IntuneRemediationFlow/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156">
+               </Location>
+               <Location
+                  uuid = "9ED4CF6F-D106-4103-9067-3068CE7FB7B6 - bbca995f5e1e822a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IntuneRemediationFlow.ViewController.signOut() -&gt; ()"
+                  moduleName = "IntuneRemediationFlow.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vinaykumar/practice/Xcode/GithubIssues/IntuneRemediationFlow/IntuneRemediationFlow/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "155"
+                  endingLineNumber = "155">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

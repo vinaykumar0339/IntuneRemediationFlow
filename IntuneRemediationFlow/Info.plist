@@ -21,5 +21,32 @@
 			</array>
 		</dict>
 	</dict>
+    <key>IntuneMAMSettings</key>
+    <dict>
+        <key>ADALAuthority</key>
+        <string>https://login.microsoftonline.com/694c298a-e1a5-4514-af7a-deee1f033aa7</string>
+        <key>ADALClientId</key>
+        <string>9794dec7-21df-48e9-8504-e4a01adf63f3</string>
+        <key>ADALRedirectScheme</key>
+        <string>msauth.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+        <key>SafariViewControllerBlockedOverride</key>
+        <true/>
+    </dict>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>msauthv3</string>
+        <string>msauthv2</string>
+    </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>msauth.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+                <string>msauth.$(PRODUCT_BUNDLE_IDENTIFIER)-intunemam</string>
+                <string>msauth.com.microsoft.intunemam</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>

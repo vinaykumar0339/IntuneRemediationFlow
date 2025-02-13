@@ -133,16 +133,19 @@ class ViewController: UIViewController {
                             let homeAccoundId = nsError.userInfo[MSALHomeAccountIdKey] as! String
                             let oid = homeAccoundId.split(separator: ".").first!
                             self?.accoundID = String(oid)
+                            self?.showAlert(title: "serverProtectionPoliciesRequired", message: "\(nsError.userInfo[MSALErrorDescriptionKey] ?? "No Error")")
                             IntuneMAMComplianceManager.instance().remediateCompliance(forAccountId: String(oid), silent: true)
                             break
                         default:
                             print("Failed with unknown MSAL error \(error?.localizedDescription ?? "No Error")")
+                            self?.showAlert(title: "unknown error", message: "\(error?.localizedDescription ?? "No Error")")
                         }
                     }
                     return
                 }
                 self?.accoundID = authResult.tenantProfile.identifier
                 print("success token: \(authResult.accessToken)")
+                self?.showAlert(title: "Signed In", message: "\(self?.accoundID ?? "No Account")")
             }
         }
     }
@@ -154,6 +157,13 @@ class ViewController: UIViewController {
         }
         IntuneMAMEnrollmentManager.instance().deRegisterAndUnenrollAccountId(accountId, withWipe: true)
     }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
     
     
 }
@@ -169,14 +179,17 @@ extension ViewController: IntuneMAMEnrollmentDelegate, IntuneMAMPolicyDelegate, 
     
     func enrollmentRequest(with status: IntuneMAMEnrollmentStatus) {
         print(status.statusCode, status.errorString ?? "No error", "enrollmentRequest")
+        showAlert(title: "Enrollment Request", message: "Status: \(status.statusCode) error: \(status.errorString ?? "No error")")
     }
     
     func unenrollRequest(with status: IntuneMAMEnrollmentStatus) {
         print(status.statusCode, status.errorString ?? "No error", "unenrollRequest")
+        showAlert(title: "UnEnrollment Request", message: "Status: \(status.statusCode) error: \(status.errorString ?? "No error")")
     }
     
     func accountId(_ accountId: String, hasComplianceStatus status: IntuneMAMComplianceStatus, withErrorMessage errMsg: String, andErrorTitle errTitle: String) {
         print(accountId, status.rawValue, errMsg, errTitle, "IntuneMAMComplianceDelegate callback")
+        showAlert(title: "Remediation AccountId", message: "status: \(status.rawValue) errMsg: \(errMsg)")
     }
 }
 

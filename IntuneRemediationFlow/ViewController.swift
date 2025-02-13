@@ -131,7 +131,7 @@ class ViewController: UIViewController {
                             // Handle this error only if you integrated Intune SDK.
                             // See more info here: https://aka.ms/intuneMAMSDK
                             let homeAccoundId = nsError.userInfo[MSALHomeAccountIdKey] as! String
-                            let oid = homeAccoundId.split(separator: ".").first!
+                            let oid = homeAccoundId.components(separatedBy: ".").first ?? ""
                             self?.accoundID = String(oid)
                             self?.showAlert(title: "serverProtectionPoliciesRequired", message: "\(nsError.userInfo[MSALErrorDescriptionKey] ?? "No Error")")
                             IntuneMAMComplianceManager.instance().remediateCompliance(forAccountId: String(oid), silent: true)
@@ -179,7 +179,7 @@ extension ViewController: IntuneMAMEnrollmentDelegate, IntuneMAMPolicyDelegate, 
     
     func enrollmentRequest(with status: IntuneMAMEnrollmentStatus) {
         print(status.statusCode, status.errorString ?? "No error", "enrollmentRequest")
-        showAlert(title: "Enrollment Request", message: "Status: \(status.statusCode) error: \(status.errorString ?? "No error")")
+//        showAlert(title: "Enrollment Request", message: "Status: \(status.statusCode) error: \(status.errorString ?? "No error")")
     }
     
     func unenrollRequest(with status: IntuneMAMEnrollmentStatus) {

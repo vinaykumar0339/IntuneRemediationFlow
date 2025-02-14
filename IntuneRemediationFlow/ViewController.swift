@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         initializeMSAL()
         signInButton()
         signOutButton()
+        
+        intuneLogsButton()
     }
     
     private func initializeMSAL() {
@@ -100,6 +102,30 @@ class ViewController: UIViewController {
         ])
     }
     
+    private func intuneLogsButton() {
+        // Create a logs button
+        let button = UIButton(type: .system)
+        button.setTitle("Intune Logs", for: .normal)
+        button.backgroundColor = UIColor.systemRed
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        // Add action to button
+        button.addTarget(self, action: #selector(intuneLogs), for: .touchUpInside)
+
+        // Add button to the view
+        view.addSubview(button)
+
+        // Set constraints to place the button below the Sign In button
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 140), // Positioned below Sign In
+            button.widthAnchor.constraint(equalToConstant: 150),
+            button.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
     @objc func signIn() {
         guard let msalApplication = msalApplication else {
             print("call initializeMSAL before using msalApplication")
@@ -156,6 +182,10 @@ class ViewController: UIViewController {
             return
         }
         IntuneMAMEnrollmentManager.instance().deRegisterAndUnenrollAccountId(accountId, withWipe: true)
+    }
+    
+    @objc func intuneLogs() {
+        IntuneMAMDiagnosticConsole.display()
     }
     
     private func showAlert(title: String, message: String) {

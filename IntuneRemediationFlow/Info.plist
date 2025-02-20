@@ -2,6 +2,51 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>msauth.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+				<string>msauth.$(PRODUCT_BUNDLE_IDENTIFIER)-intunemam</string>
+				<string>msauth.com.microsoft.intunemam</string>
+				<string>msauth.com.microsoft.intunemam-intunemam</string>
+			</array>
+		</dict>
+	</array>
+	<key>IntuneMAMSettings</key>
+	<dict>
+		<key>ADALAuthority</key>
+		<string>https://login.microsoftonline.com/694c298a-e1a5-4514-af7a-deee1f033aa7</string>
+		<key>ADALClientId</key>
+		<string>9794dec7-21df-48e9-8504-e4a01adf63f3</string>
+		<key>ADALRedirectScheme</key>
+		<string>msauth.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+		<key>SafariViewControllerBlockedOverride</key>
+		<true/>
+	</dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>msauthv2</string>
+		<string>msauthv3</string>
+		<string>https-intunemam</string>
+		<string>http-intunemam</string>
+		<string>microsoft-edge-https</string>
+		<string>microsoft-edge-http</string>
+		<string>ms-outlook</string>
+		<string>companyportal</string>
+		<string>smart-ns</string>
+		<string>zips</string>
+		<string>lacoonsecurity</string>
+		<string>wandera</string>
+		<string>lookoutwork-ase</string>
+		<string>skycure</string>
+		<string>betteractiveshield</string>
+		<string>smsec</string>
+		<string>mvisionmobile</string>
+		<string>scmx</string>
+		<string>intunemam-mtd</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -21,32 +66,5 @@
 			</array>
 		</dict>
 	</dict>
-    <key>IntuneMAMSettings</key>
-    <dict>
-        <key>ADALAuthority</key>
-        <string>https://login.microsoftonline.com/694c298a-e1a5-4514-af7a-deee1f033aa7</string>
-        <key>ADALClientId</key>
-        <string>9794dec7-21df-48e9-8504-e4a01adf63f3</string>
-        <key>ADALRedirectScheme</key>
-        <string>msauth.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-        <key>SafariViewControllerBlockedOverride</key>
-        <true/>
-    </dict>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>msauthv3</string>
-        <string>msauthv2</string>
-    </array>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>msauth.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-                <string>msauth.$(PRODUCT_BUNDLE_IDENTIFIER)-intunemam</string>
-                <string>msauth.com.microsoft.intunemam</string>
-            </array>
-        </dict>
-    </array>
 </dict>
 </plist>

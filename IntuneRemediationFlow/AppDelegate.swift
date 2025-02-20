@@ -7,11 +7,19 @@
 
 import UIKit
 import MSAL
+import IntuneMAMSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    private var complainceDelegate: MAMComplianceDelegate?
+    private var policyDelegate: MAMPolicyDelegate?
+    private var enrollmentDelegate: MAMEnrollmentDelegate?
 
-
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        self.setIntuneDelegate()
+        return true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -35,7 +43,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return MSALPublicClientApplication.handleMSALResponse(url, sourceApplication: options[.sourceApplication] as? String)
     }
-
+    
+    func setIntuneDelegate() {
+        complainceDelegate = MAMComplianceDelegate()
+        IntuneMAMComplianceManager.instance().delegate = complainceDelegate
+        
+        policyDelegate = MAMPolicyDelegate()
+        IntuneMAMPolicyManager.instance().delegate = policyDelegate
+        
+        enrollmentDelegate = MAMEnrollmentDelegate()
+        IntuneMAMEnrollmentManager.instance().delegate = enrollmentDelegate
+    }
 
 }
 

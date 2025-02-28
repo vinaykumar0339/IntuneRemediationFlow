@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     private var msalApplication: MSALPublicClientApplication?
     
     let kClientID = "9794dec7-21df-48e9-8504-e4a01adf63f3"
-    let kRedirectUri = "msauth.com.test.IntuneRemediationFlow://auth"
+    let kRedirectUri = "msauth.com.test.IntuneRemediationFlow1://auth"
     let kAuthority = "https://login.microsoftonline.com/organizations"
     let scopes = ["https://graph.microsoft.com/InformationProtectionPolicy.Read"]
     private var accoundID: String? = nil
@@ -157,7 +157,12 @@ class ViewController: UIViewController {
                             self?.accoundID = String(oid)
 //                            self?.showAlert(title: "serverProtectionPoliciesRequired", message: "\(nsError.userInfo[MSALErrorDescriptionKey] ?? "No Error")")
                             print("received serverProtectionPoliciesRequired")
-                            IntuneMAMComplianceManager.instance().remediateCompliance(forAccountId: String(oid), silent: false)
+//                            Old Flow
+//                            IntuneMAMComplianceManager.instance().remediateCompliance(forAccountId: String(oid), silent: false)
+//                            New Flow
+                            MAMComplianceDelegate.shared.performIntuneRemediation(for: String(oid), silent: false) { message in
+                                print("\(message) in performIntuneRemediation")
+                            }
                             break
                         default:
                             print("Failed with unknown MSAL error \(error?.localizedDescription ?? "No Error")")

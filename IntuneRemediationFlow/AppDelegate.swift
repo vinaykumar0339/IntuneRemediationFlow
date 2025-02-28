@@ -45,7 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setIntuneDelegate() {
-        complainceDelegate = MAMComplianceDelegate()
+//        Old Flow
+//        complainceDelegate = MAMComplianceDelegate()
+//        IntuneMAMComplianceManager.instance().delegate = complainceDelegate
+        
+//        New Flow
+        complainceDelegate = MAMComplianceDelegate.shared
         IntuneMAMComplianceManager.instance().delegate = complainceDelegate
         
         policyDelegate = MAMPolicyDelegate()
